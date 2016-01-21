@@ -1,0 +1,12 @@
+<p>
+	<strong>Title:</strong>
+	<%= @job.title %>
+</p>
+
+<p>
+	<strong>Description:</strong>
+	<%= @job.description %>
+</p>
+
+<h5><%= link_to "Edit Posting", edit_job_path(@job) %></h5>
+<h5><%= link_to 'Delete Posting', @job, method: :delete , data: {confirm: 'Are you sure?'}%></h5>

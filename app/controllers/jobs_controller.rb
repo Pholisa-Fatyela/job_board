@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+	 before_action :set_job, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@jobs = Job.all
@@ -23,7 +24,7 @@ class JobsController < ApplicationController
 
 	def update
 		@job = Job.find(params[:id])
-		@job.update_attributes(job_params)
+		@job.update(job_params)
 		redirect_to jobs_path
 	end
 
@@ -34,6 +35,9 @@ class JobsController < ApplicationController
 	end
 
 	private
+	def set_job
+		@job = Job.find(params[:id])
+	end
 
 	def job_params
 		params.require(:job).permit(:title, :description)

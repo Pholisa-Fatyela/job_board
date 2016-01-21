@@ -14,10 +14,15 @@
 ActiveRecord::Schema.define(version: 20160120135202) do
 
   create_table "jobs", force: :cascade do |t|
-    t.text     "title"
+    t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "requirements"
+    t.string   "job_level"
+    t.string   "status"
+    t.date     "start_date"
+    t.text     "contact"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

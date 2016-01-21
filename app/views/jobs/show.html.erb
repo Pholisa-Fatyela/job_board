@@ -1,3 +1,4 @@
+
 <p>
 	<strong>Title:</strong>
 	<%= @job.title %>
@@ -6,6 +7,32 @@
 <p>
 	<strong>Description:</strong>
 	<%= @job.description %>
+</p>
+
+<p>
+	<strong>Requirements:</strong>
+	<%= @job.requirements %>
+</p>
+
+<p>
+	<strong>Contract:</strong>
+		<ul>
+		<strong>Job Level:</strong>
+		<%= @job.job_level %>
+		</ul>
+		<ul>
+		<strong>Status:</strong>
+		<%= @job.status %>
+		</ul>
+		<ul>
+		<strong>Start Date:</strong>
+		<%= @job.start_date %>
+		</ul>
+</p>
+
+<p>
+	<strong>Contact:</strong>
+	<%= @job.contact %>
 </p>
 
 <h5><%= link_to "Edit Posting", edit_job_path(@job) %></h5>

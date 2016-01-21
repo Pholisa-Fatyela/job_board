@@ -1,2 +1,2 @@
 # job_board
-RailsBridge tuutorial
+RailsBridge tutorial

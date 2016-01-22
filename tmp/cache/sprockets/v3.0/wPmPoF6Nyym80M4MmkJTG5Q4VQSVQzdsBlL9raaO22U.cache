@@ -1,0 +1,7 @@
+I"h(function() {
+  jQuery(function() {
+    return $("#job_list").dataTable({});
+  });
+
+}).call(this);
+:ET

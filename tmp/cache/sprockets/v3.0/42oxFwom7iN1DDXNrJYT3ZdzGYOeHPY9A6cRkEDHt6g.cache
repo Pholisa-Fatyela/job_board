@@ -1,0 +1,9 @@
+I"è(function() {
+  jQuery(function() {
+    return $("#job_list").dataTable({
+      "sPaginationType": "four_button"
+    });
+  });
+
+}).call(this);
+:ET

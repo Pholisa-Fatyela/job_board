@@ -1,0 +1,9 @@
+I"ê(function() {
+  jQuery(function() {
+    return $("#job_list").dataTable({
+      buttons: ['copy', 'excel', 'pdf']
+    });
+  });
+
+}).call(this);
+:ET

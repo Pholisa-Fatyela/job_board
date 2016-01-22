@@ -1,0 +1,14 @@
+I"Ð(function() {
+  jQuery(function() {
+    return $("#job_list").dataTable({
+      "columnDefs": [
+        {
+          "orderData": [0, 1],
+          "targets": 0
+        }
+      ]
+    });
+  });
+
+}).call(this);
+:ET

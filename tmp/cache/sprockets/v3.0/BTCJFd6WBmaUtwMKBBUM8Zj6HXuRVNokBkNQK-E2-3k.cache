@@ -1,0 +1,9 @@
+I"ˆ(function() {
+  jQuery(function() {
+    return $("#job_list").dataTable({
+      "pagingType": "scrolling"
+    });
+  });
+
+}).call(this);
+:ET

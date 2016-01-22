@@ -1,0 +1,9 @@
+I"…(function() {
+  jQuery(function() {
+    return $("#job_list").dataTable({
+      "order": [[3, "desc"]]
+    });
+  });
+
+}).call(this);
+:ET

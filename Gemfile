@@ -55,5 +55,3 @@ group :development do
 end
 
 gem 'quiet_assets'
-
-gem 'pg'

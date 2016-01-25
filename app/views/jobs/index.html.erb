@@ -8,7 +8,7 @@
 	    </tr>
 	</thead>
 	<tbody>
-		<% @jobs.each do |job, index| %>
+		<% @jobs.each do |job| %>
 			<tr>
 				<td><%= job.title %></td>
 				<td><%= link_to "Show Posting", job %></td>

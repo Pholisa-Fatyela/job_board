@@ -56,3 +56,4 @@ end
 
 gem 'quiet_assets'
 gem 'seed_dump'
+gem 'devise'

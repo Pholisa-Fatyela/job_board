@@ -1,42 +1,42 @@
 <%= form_for @job do |f| %>
 <div class="form-style-2">
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  </br>
-  <div>
-    <%= f.label :description %>
-    <%= f.text_area :description, size: '50x6' %>
-  </div>
-  </br>
-  <div>
-    <%= f.label :requirements %>
-    <%= f.text_area :requirements, size: '50x6' %>
-  </div>
-  </br>
-  <div>
-    <%= f.label :job_level %>
-    <%= f.text_field :job_level %>
-  </div>
-  </br>
-  <div>
-    <%= f.label :status %>
-    <%= f.text_field :status %>
-  </div>
-  </br>
-  <div>
-    <%= f.label :start_date %>
-    <%= f.text_field :start_date %>
-  </div>
-  </br>
-  <div>
-    <%= f.label :contact %>
-    <%= f.text_area :contact %>
-  </div>
-  </br>
-  <div>
-    <%= f.submit %>
-  </div>
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	</br>
+	<div>
+		<%= f.label :description %>
+		<%= f.text_area :description, size: '50x6' %>
+	</div>
+	</br>
+	<div>
+		<%= f.label :requirements %>
+		<%= f.text_area :requirements, size: '50x6' %>
+	</div>
+	</br>
+	<div>
+		<%= f.label :job_level %>
+		<%= f.text_field :job_level %>
+	</div>
+	</br>
+	<div>
+		<%= f.label :status %>
+		<%= f.text_field :status %>
+	</div>
+	</br>
+	<div>
+		<%= f.label :start_date %>
+		<%= f.text_field :start_date %>
+	</div>
+	</br>
+	<div>
+		<%= f.label :contact %>
+		<%= f.text_area :contact %>
+	</div>
+	</br>
+	<div>
+		<%= f.submit %>
+	</div>
 </div>
 <% end %>

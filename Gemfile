@@ -55,3 +55,4 @@ group :development do
 end
 
 gem 'quiet_assets'
+gem 'seed_dump'

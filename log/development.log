@@ -2747,3 +2747,26 @@ Processing by JobsController#index as HTML
   [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs"
   Rendered jobs/index.html.erb within layouts/application (3.9ms)
 Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/jobs/13" for ::1 at 2016-01-26 15:31:02 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "13"]]
+  Rendered jobs/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/jobs" for ::1 at 2016-01-26 15:31:05 +0200
+Processing by JobsController#index as HTML
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs" for ::1 at 2016-01-26 15:31:26 +0200
+Processing by JobsController#index as HTML
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs"
+  Rendered jobs/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 138ms (Views: 136.9ms | ActiveRecord: 0.3ms)

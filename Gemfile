@@ -46,6 +46,15 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+# guard testing
+group :development do
+  gem 'guard-minitest', '~> 2.3.2' # https://github.com/guard/guard-minitest
+  # Colorize minitest output and show failing tests instantly.
+  gem 'minitest-colorize', git: 'https://github.com/ysbaddaden/minitest-colorize'
+  # https://github.com/Springest/terminal-notifier-guard
+  gem 'terminal-notifier-guard', '~> 1.5.3'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'

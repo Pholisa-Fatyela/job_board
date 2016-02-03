@@ -110,6 +110,9 @@ GEM
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.3)
+    minitest-rails (2.2.0)
+      minitest (~> 5.7)
+      railties (~> 4.1)
     multi_json (1.11.2)
     nenv (0.2.0)
     nokogiri (1.6.7.1)
@@ -220,6 +223,7 @@ DEPENDENCIES
   jquery-datatables-rails (~> 3.3.0)
   jquery-rails
   minitest-colorize!
+  minitest-rails
   pg
   pry-rails
   quiet_assets

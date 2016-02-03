@@ -1,23 +1,33 @@
 require "test_helper"
-include Devise::TestHelpers
 
 class JobsControllerTest < ActionController::TestCase
-  # test 'test_sanity' do
-  #   flunk "Need real tests"
-  # end
-  # def test_new
-  #   get :new
-  #   assert_response :success
-  #   assert_select 'form'
-  # end
+  include Devise::TestHelpers
 
-  # def test_create
-  #   assert_difference 'Job.count' do
-  #     post :create, category: {title: 'Caretaker', description: "Will take care of the complex" }
-  #   end
-  #   assert_redirected_to categories_url
-  #   assert_equal 'Category created!', flash[:notice]
-  # end
+  setup do
+    @job = users(:user1)
+  end
+
+  test "should get the index" do
+    sign_in users(:user1)
+    get :index
+    assert_response :success
+  end
+
+  test "should get new job" do
+    sign_in users(:user1)
+    get :new
+    assert_response :success
+    assert_select 'form'
+  end
+
+  test "should create new job" do
+    sign_in users(:user1)
+    assert_difference 'Job.count' do
+      post :create, job: {title: 'Caretaker', description: "Will take care of the complex" }
+    end
+    assert_redirected_to jobs_url
+    assert_equal 'Job created!', flash[:notice]
+  end
   #
   # def test_create_fail
   #   assert_no_difference 'Category.count' do
@@ -26,9 +36,5 @@ class JobsControllerTest < ActionController::TestCase
   #   assert_template 'new'
   # end
   #
-  test "should get the index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:jobs)
-  end
+
 end

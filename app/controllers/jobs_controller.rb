@@ -25,6 +25,8 @@ class JobsController < ApplicationController
 
 	def edit
 		@job = Job.find(params[:id])
+		flash[:notice] = "Job edited!"
+		redirect_to jobs_path
 	end
 
 	def update

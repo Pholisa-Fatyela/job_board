@@ -15,6 +15,7 @@ class JobsController < ApplicationController
 
 	def create
 		Job.create(job_params)
+		flash[:notice] = "Job created!"
 		redirect_to jobs_path
 	end
 

@@ -3,9 +3,10 @@ require "test_helper"
 class JobsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
 
+
   setup do
-    @job = users(:user1)
     sign_in users(:user1)
+    @job = jobs(:job1)
   end
 
   test "should get the index" do
@@ -19,12 +20,12 @@ class JobsControllerTest < ActionController::TestCase
     assert_select 'form'
   end
 
-  test "should create new job" do
-    assert_difference 'Job.count' do
-      post :create, job: {title: 'Caretaker', description: "Will take care of the complex" }
+  test "should create job" do
+    sign_in users(:user1)
+    assert_difference('Job.count') do
+      post :create, job: {title: @job.title, description: @job.description }
     end
-    assert_redirected_to jobs_url
-    assert_equal 'Job created!', flash[:notice]
+    assert_redirected_to jobs_path
   end
 
   test "create fail" do
@@ -43,16 +44,16 @@ class JobsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should edit a job" do
-
-  end
-
-  test "should update job" do
-
-  end
-
-  test "should delete a job" do
-
-  end
+  # test "should edit a job" do
+  #
+  # end
+  #
+  # test "should update job" do
+  #
+  # end
+  #
+  # test "should delete a job" do
+  #
+  # end
 
 end

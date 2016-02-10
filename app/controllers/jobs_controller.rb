@@ -14,9 +14,13 @@ class JobsController < ApplicationController
 	end
 
 	def create
-		Job.create(job_params)
-		flash[:notice] = "Job created!"
-		redirect_to jobs_path
+		@job = Job.new(job_params)
+		if @job.save
+			redirect_to jobs_path
+		else
+			render :new
+		# flash[:notice] = "Job created!"
+		end
 	end
 
 	def show
@@ -25,8 +29,7 @@ class JobsController < ApplicationController
 
 	def edit
 		@job = Job.find(params[:id])
-		flash[:notice] = "Job edited!"
-		redirect_to jobs_path
+		flash[:notice] = "Job Edited!"
 	end
 
 	def update

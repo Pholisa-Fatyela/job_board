@@ -51,6 +51,7 @@ end
 group :development do
 	gem 'minitest-rails'
   gem 'guard-minitest', '~> 2.3.2' # https://github.com/guard/guard-minitest
+	gem 'minitest-reporters'
   # Colorize minitest output and show failing tests instantly.
   gem 'minitest-colorize', git: 'https://github.com/ysbaddaden/minitest-colorize'
   # https://github.com/Springest/terminal-notifier-guard
@@ -68,3 +69,4 @@ end
 gem 'quiet_assets'
 gem 'seed_dump'
 gem 'devise'
+gem "codeclimate-test-reporter", group: :test, require: nil

@@ -15430,3 +15430,837 @@ Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.3ms)
   [1m[35m (0.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160120135202')
   [1m[36m (0.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160126142614')[0m
   [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160126142621')
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-10 16:09:37 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (11.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (59.2ms)
+Completed 200 OK in 573ms (Views: 532.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-10 16:09:44 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 84ms (Views: 82.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-10 16:09:46 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (7.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 66ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-02-10 16:09:54 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L7VZZyNPR+VpuKrXFSisFwVxaxHHG69UnmbQIq3NvOEaMezslDaKpatuJ1qppz6ecux/5X8pBAAQrOEY2L53sQ==", "user"=>{"email"=>"Admin@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@test.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2016-02-10 14:09:54.890657"], ["sign_in_count", 2], ["updated_at", "2016-02-10 14:09:54.891864"], ["id", 206669145]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2016-02-10 16:09:54 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669145]]
+  [1m[36mJob Load (0.5ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 70ms (Views: 58.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs/1004069126" for ::1 at 2016-02-10 16:10:30 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069126"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669145]]
+  [1m[36mJob Load (0.8ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069126]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069126"]]
+  [1m[36mTag Load (0.9ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069126]]
+  Rendered jobs/show.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 135ms (Views: 124.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-10 16:10:33 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669145]]
+  [1m[36mJob Load (0.8ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 68ms (Views: 64.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/jobs/1004069122" for ::1 at 2016-02-10 16:10:35 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069122"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669145]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069122]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069122"]]
+  [1m[36mTag Load (0.7ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069122]]
+  Rendered jobs/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 66ms (Views: 61.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-10 16:10:37 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669145]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 54ms (Views: 50.0ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-02-10 16:10:40 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LP0CRhw/EuyzCXdndrvPdlUVcoDAUKW6tIaQPDgayQh+b/RxYpWBJJWnNOKcWEGzIywKHi6YQKs6wOtYk65vaA=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669145]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-02-10 16:10:40 +0200
+Processing by JobsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-10 16:10:40 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 62ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-11 08:14:46 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (58.4ms)
+Completed 200 OK in 471ms (Views: 438.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-11 08:14:47 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 96ms (Views: 93.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-02-11 08:14:58 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XutoqDZhg+xV36RgVWUXrcpyI5F6cah+xLBfnTnJTOQ0U5BVnCWCxO/M1krNFKU9VwZBCKzAgayo8VpdRmfHVQ==", "user"=>{"email"=>"linda@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "linda@example.com"]]
+Completed 401 Unauthorized in 21ms (ActiveRecord: 0.4ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XutoqDZhg+xV36RgVWUXrcpyI5F6cah+xLBfnTnJTOQ0U5BVnCWCxO/M1krNFKU9VwZBCKzAgayo8VpdRmfHVQ==", "user"=>{"email"=>"linda@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (5.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 166ms (Views: 63.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-02-11 08:15:14 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J6P5/MhiP7QvXR2gW6sMQa5yQmMD1BniqeFGphucCiRNGwEBYiY+nJVOb4rD2r7RMwYg+tVlMDDFoENmZDKBlQ==", "user"=>{"email"=>"lisa@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "lisa@example.com"]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+BCrypt::Errors::InvalidHash (invalid hash):
+  bcrypt (3.1.10) lib/bcrypt/password.rb:60:in `initialize'
+  devise (3.5.5) lib/devise/encryptor.rb:14:in `new'
+  devise (3.5.5) lib/devise/encryptor.rb:14:in `compare'
+  devise (3.5.5) lib/devise/models/database_authenticatable.rb:48:in `valid_password?'
+  devise (3.5.5) lib/devise/strategies/database_authenticatable.rb:11:in `block in authenticate!'
+  devise (3.5.5) lib/devise/models/authenticatable.rb:81:in `valid_for_authentication?'
+  devise (3.5.5) lib/devise/strategies/authenticatable.rb:36:in `validate'
+  devise (3.5.5) lib/devise/strategies/database_authenticatable.rb:11:in `authenticate!'
+  warden (1.2.4) lib/warden/strategies/base.rb:53:in `_run!'
+  warden (1.2.4) lib/warden/proxy.rb:358:in `block in _run_strategies_for'
+  warden (1.2.4) lib/warden/proxy.rb:353:in `each'
+  warden (1.2.4) lib/warden/proxy.rb:353:in `_run_strategies_for'
+  warden (1.2.4) lib/warden/proxy.rb:323:in `_perform_authentication'
+  warden (1.2.4) lib/warden/proxy.rb:127:in `authenticate!'
+  devise (3.5.5) app/controllers/devise/sessions_controller.rb:17:in `create'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `call'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/mapper.rb:49:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.4) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.4) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.4) lib/warden/manager.rb:34:in `call'
+  rack (1.6.4) lib/rack/etag.rb:24:in `call'
+  rack (1.6.4) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.4) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.4) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  quiet_assets (1.1.0) lib/quiet_assets.rb:27:in `call_with_quiet_assets'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/pholisafatyela/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/pholisafatyela/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/pholisafatyela/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.1ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (99.9ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (79.8ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (176.5ms)
+  [1m[36mUser Load (3.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started POST "/users/sign_in" for ::1 at 2016-02-11 08:18:12 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"J6P5/MhiP7QvXR2gW6sMQa5yQmMD1BniqeFGphucCiRNGwEBYiY+nJVOb4rD2r7RMwYg+tVlMDDFoENmZDKBlQ==", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "test1@test.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-02-10 11:37:52.882677"], ["current_sign_in_at", "2016-02-11 06:18:12.953894"], ["sign_in_count", 7], ["updated_at", "2016-02-11 06:18:12.955099"], ["id", 206669144]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 208ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2016-02-11 08:18:13 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 425ms (Views: 409.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2016-02-11 08:37:20 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sl7CZjZ/M1fmHDe59m/1SWYA6b64QlHR3klI5cY9imxWzyWDItjoPvImVkTtg3MvUgiL0KaC+8g3WC9qKlgyXg=="}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2016-02-11 08:37:20 +0200
+Processing by JobsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-11 08:37:20 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (22.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (86.0ms)
+Completed 200 OK in 212ms (Views: 203.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-11 08:37:23 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (11.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 89ms (Views: 87.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-02-11 08:37:35 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qDX1HNumrVDNyjarELq19M50kcgS3DGgovDJxwmi5KH7iGTeW8SDjekW+LV+1L6LGfoTOPYiejlZm/zioBZj4g==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "example@example.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.1ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qDX1HNumrVDNyjarELq19M50kcgS3DGgovDJxwmi5KH7iGTeW8SDjekW+LV+1L6LGfoTOPYiejlZm/zioBZj4g==", "user"=>{"email"=>"example@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered devise/shared/_links.html.erb (5.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 165ms (Views: 70.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 08:37:43 +0200
+Processing by JobsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-11 08:37:43 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (6.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 92ms (Views: 90.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-02-11 08:37:53 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hcm6SvQsZ4gO1VD7yEssm2w0XIEuc6V1aTIv5MTUdftOdCuIdE5JVSoJnuWmJSfku7reccqN7uySWRrBbWDyuA==", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "test1@test.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-02-11 06:18:12.953894"], ["current_sign_in_at", "2016-02-11 06:37:53.868399"], ["sign_in_count", 8], ["updated_at", "2016-02-11 06:37:53.869318"], ["id", 206669144]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 114ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 08:37:53 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.5ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 77ms (Views: 74.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 12:55:19 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 401 Unauthorized in 33ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 12:55:19 +0200
+Processing by JobsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-11 12:55:19 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (8.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 99ms (Views: 95.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2016-02-11 15:37:29 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GJ3O7gorbGwYE2VFPI1OahHF3JmP0VOT3HQhRTXZqF5FKwkr+fZYAssnYS8G90138zfODvqmJqJImfayR6fV3A==", "user"=>{"email"=>"test1@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "test1@test.com"]]
+  [1m[35m (0.6ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-02-11 06:37:53.868399"], ["current_sign_in_at", "2016-02-11 13:37:29.637850"], ["sign_in_count", 9], ["updated_at", "2016-02-11 13:37:29.645313"], ["id", 206669144]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 162ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:37:29 +0200
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.5ms)[0m  SELECT "jobs".* FROM "jobs"
+  Rendered jobs/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 87ms (Views: 82.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs/1004069122" for ::1 at 2016-02-11 15:37:34 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069122"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (3.3ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", 1004069122]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1004069122"]]
+  [1m[35mTag Load (1.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 1004069122]]
+  Rendered jobs/show.html.erb within layouts/application (119.6ms)
+Completed 200 OK in 187ms (Views: 165.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/tags/scum" for ::1 at 2016-02-11 15:37:36 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"tag"=>"scum"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", nil]]
+Completed 404 Not Found in 6ms (ActiveRecord: 0.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Job with 'id'=):
+  app/controllers/jobs_controller.rb:49:in `set_job'
+
+
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.1ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (137.2ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (77.4ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/pholisafatyela/.rvm/gems/ruby-2.2.1/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (175.0ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:40:12 +0200
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.9ms)[0m  SELECT "jobs".* FROM "jobs"
+  Rendered jobs/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 141ms (Views: 109.8ms | ActiveRecord: 2.6ms)
+  [1m[36mJob Load (0.5ms)[0m  [1mSELECT  "jobs".* FROM "jobs"  ORDER BY "jobs"."id" ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 809586041]]
+
+
+Started GET "/jobs/1004069122" for ::1 at 2016-02-11 15:49:42 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069122"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069122]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069122"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069122]]
+  Rendered jobs/show.html.erb within layouts/application (52.4ms)
+Completed 200 OK in 540ms (Views: 479.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:49:46 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1004069122" for ::1 at 2016-02-11 15:50:01 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069122"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069122]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069122"]]
+  [1m[36mTag Load (0.5ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069122]]
+  Rendered jobs/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 67ms (Views: 62.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:50:05 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 70ms (Views: 65.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1004069120" for ::1 at 2016-02-11 15:50:24 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069120"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069120]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069120"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069120]]
+  Rendered jobs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 54ms (Views: 49.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1004069120" for ::1 at 2016-02-11 15:50:32 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069120"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069120]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069120"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069120]]
+  Rendered jobs/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 51ms (Views: 48.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/jobs/1004069125" for ::1 at 2016-02-11 15:50:35 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069125"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069125]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069125"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069125]]
+  Rendered jobs/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 52ms (Views: 48.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:50:59 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.4ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 67ms (Views: 63.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/jobs/1004069120" for ::1 at 2016-02-11 15:51:41 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069120"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069120]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069120"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069120]]
+  Rendered jobs/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 64ms (Views: 60.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:51:45 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 81ms (Views: 76.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1004069127" for ::1 at 2016-02-11 15:51:47 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069127"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069127]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069127"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069127]]
+  Rendered jobs/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 75ms (Views: 70.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:51:51 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 81ms (Views: 78.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1004069120" for ::1 at 2016-02-11 15:51:54 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069120"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069120]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069120"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069120]]
+  Rendered jobs/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 65ms (Views: 59.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1004069120/edit" for ::1 at 2016-02-11 15:51:55 +0200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1004069120"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.5ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069120]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069120"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069120]]
+  Rendered jobs/_form.html.erb (63.8ms)
+  Rendered jobs/edit.html.erb within layouts/application (76.3ms)
+Completed 200 OK in 175ms (Views: 170.0ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/jobs/1004069120" for ::1 at 2016-02-11 15:52:05 +0200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M+PoESXBXfGRtsUVDYx6fjNpinlkXYUyn9PEKgtZxW2Wvd/X6QKaiowW4SEad7B1LxJbYEBjxmhYtbqis3xCkw==", "job"=>{"title"=>"Singer", "description"=>"country music\r\n", "requirements"=>"\r\n", "job_level"=>"", "status"=>"", "start_date"=>"", "contact"=>"", "tag_list"=>"li,li,ko,er"}, "commit"=>"Update Job", "id"=>"1004069120"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069120]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069120"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTag Load (0.3ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1  [["name", "li"]]
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "li"], ["created_at", "2016-02-11 13:52:05.373804"], ["updated_at", "2016-02-11 13:52:05.373804"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1  [["name", "li"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "ko"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "ko"], ["created_at", "2016-02-11 13:52:05.378590"], ["updated_at", "2016-02-11 13:52:05.378590"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "er"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "er"], ["created_at", "2016-02-11 13:52:05.381270"], ["updated_at", "2016-02-11 13:52:05.381270"]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069120]]
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "taggings" ("job_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["job_id", 1004069120], ["tag_id", 5], ["created_at", "2016-02-11 13:52:05.400252"], ["updated_at", "2016-02-11 13:52:05.400252"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "taggings" ("job_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["job_id", 1004069120], ["tag_id", 5], ["created_at", "2016-02-11 13:52:05.404625"], ["updated_at", "2016-02-11 13:52:05.404625"]]
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "taggings" ("job_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["job_id", 1004069120], ["tag_id", 6], ["created_at", "2016-02-11 13:52:05.407509"], ["updated_at", "2016-02-11 13:52:05.407509"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "taggings" ("job_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["job_id", 1004069120], ["tag_id", 7], ["created_at", "2016-02-11 13:52:05.410494"], ["updated_at", "2016-02-11 13:52:05.410494"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 48ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:52:05 +0200
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT "jobs".* FROM "jobs"
+  Rendered jobs/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 42ms (Views: 39.6ms | ActiveRecord: 0.4ms)
+  [1m[36mJob Load (1.6ms)[0m  [1mSELECT  "jobs".* FROM "jobs"  ORDER BY "jobs"."id" ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 809586041]]
+
+
+Started GET "/jobs/1004069124" for ::1 at 2016-02-11 15:52:14 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069124"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", 1004069124]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1004069124"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 1004069124]]
+  Rendered jobs/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 48ms (Views: 44.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:52:16 +0200
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs"
+  Rendered jobs/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1004069122" for ::1 at 2016-02-11 15:52:18 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069122"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", 1004069122]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1004069122"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 1004069122]]
+  Rendered jobs/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 85ms (Views: 82.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:52:22 +0200
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs"
+  Rendered jobs/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/1004069115" for ::1 at 2016-02-11 15:52:24 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069115"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", 1004069115]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1004069115"]]
+  [1m[35mTag Load (0.2ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 1004069115]]
+  Rendered jobs/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 78ms (Views: 73.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/jobs/1004069115/edit" for ::1 at 2016-02-11 15:52:26 +0200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"1004069115"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", 1004069115]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1004069115"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 1004069115]]
+  Rendered jobs/_form.html.erb (6.3ms)
+  Rendered jobs/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 51ms (Views: 47.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/jobs/1004069115" for ::1 at 2016-02-11 15:52:32 +0200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FCmpHxFu1n9H/IpQRbZ0DpTmHBAmUvjRqEytpkdktvaxd57Z3a0RBFpcrmRSTb4FiJ3NCQJsu4tvKtMu/0ExCA==", "job"=>{"title"=>"Chef", "description"=>"i love cooking no matter what", "requirements"=>"", "job_level"=>"", "status"=>"", "start_date"=>"", "contact"=>"", "tag_list"=>"food, job"}, "commit"=>"Update Job", "id"=>"1004069115"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.1ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", 1004069115]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", "1004069115"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "food"]]
+  [1m[35mTag Load (0.0ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1  [["name", "job"]]
+  [1m[36mTag Load (0.0ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069115]]
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("job_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["job_id", 1004069115], ["tag_id", 1], ["created_at", "2016-02-11 13:52:32.658162"], ["updated_at", "2016-02-11 13:52:32.658162"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "taggings" ("job_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["job_id", 1004069115], ["tag_id", 2], ["created_at", "2016-02-11 13:52:32.660282"], ["updated_at", "2016-02-11 13:52:32.660282"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "jobs" SET "requirements" = ?, "job_level" = ?, "status" = ?, "contact" = ?, "updated_at" = ? WHERE "jobs"."id" = ?  [["requirements", ""], ["job_level", ""], ["status", ""], ["contact", ""], ["updated_at", "2016-02-11 13:52:32.661699"], ["id", 1004069115]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:52:32 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 41ms (Views: 39.1ms | ActiveRecord: 0.4ms)
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT  "jobs".* FROM "jobs"  ORDER BY "jobs"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 809586041]]
+  [1m[36mJob Load (4.8ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+
+
+Started GET "/jobs/809586041" for ::1 at 2016-02-11 15:54:29 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"809586041"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 809586041]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "809586041"]]
+  [1m[36mTag Load (0.3ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 809586041]]
+  Rendered jobs/show.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 531ms (Views: 467.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/jobs/809586041/edit" for ::1 at 2016-02-11 15:54:32 +0200
+Processing by JobsController#edit as HTML
+  Parameters: {"id"=>"809586041"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 809586041]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "809586041"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 809586041]]
+  Rendered jobs/_form.html.erb (64.2ms)
+  Rendered jobs/edit.html.erb within layouts/application (76.0ms)
+Completed 200 OK in 175ms (Views: 171.3ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/jobs/809586041" for ::1 at 2016-02-11 15:54:44 +0200
+Processing by JobsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7gg1wpy+g+O2YlCNeRojKGrb5H6sFzdxafo5SgchBEJLVgIEUH1EmKvCdLlu4ekjdqA1Z4gpdCuunEfCvwSDvA==", "job"=>{"title"=>"Singer", "description"=>"i love singing", "requirements"=>"", "job_level"=>"", "status"=>"", "start_date"=>"", "contact"=>"", "tag_list"=>"music, love"}, "commit"=>"Update Job", "id"=>"809586041"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 809586041]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "809586041"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mTag Load (0.2ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1  [["name", "music"]]
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "music"], ["created_at", "2016-02-11 13:54:44.322486"], ["updated_at", "2016-02-11 13:54:44.322486"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1  [["name", "love"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "love"], ["created_at", "2016-02-11 13:54:44.326404"], ["updated_at", "2016-02-11 13:54:44.326404"]]
+  [1m[35mTag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 809586041]]
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "taggings" ("job_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["job_id", 809586041], ["tag_id", 8], ["created_at", "2016-02-11 13:54:44.345289"], ["updated_at", "2016-02-11 13:54:44.345289"]]
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "taggings" ("job_id", "tag_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["job_id", 809586041], ["tag_id", 9], ["created_at", "2016-02-11 13:54:44.349138"], ["updated_at", "2016-02-11 13:54:44.349138"]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "jobs" SET "requirements" = ?, "job_level" = ?, "status" = ?, "contact" = ?, "updated_at" = ? WHERE "jobs"."id" = ?[0m  [["requirements", ""], ["job_level", ""], ["status", ""], ["contact", ""], ["updated_at", "2016-02-11 13:54:44.351962"], ["id", 809586041]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 49ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:54:44 +0200
+Processing by JobsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  [1m[35mJob Load (0.3ms)[0m  SELECT "jobs".* FROM "jobs"
+  Rendered jobs/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 65ms (Views: 62.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/jobs/new" for ::1 at 2016-02-11 15:54:46 +0200
+Processing by JobsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 206669144]]
+  Rendered jobs/_form.html.erb (12.0ms)
+  Rendered jobs/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/jobs" for ::1 at 2016-02-11 15:55:13 +0200
+Processing by JobsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RYlkM6HkQNvY+zvQS8sasgThpzoWgrYsPXgSj0p3lnTg11P1bSeHoMVbH+RcMNC5GJp2IzK89Xb6HmwH8lIRig==", "job"=>{"title"=>"models testing", "description"=>"flgndl", "requirements"=>"ldkngljfn", "job_level"=>"askldgf", "status"=>"fjng", "start_date"=>"", "contact"=>"522", "tag_list"=>"last, tag, how, many"}, "commit"=>"Create Job"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "last"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "last"], ["created_at", "2016-02-11 13:55:13.320510"], ["updated_at", "2016-02-11 13:55:13.320510"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.1ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "tag"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "tag"], ["created_at", "2016-02-11 13:55:13.324203"], ["updated_at", "2016-02-11 13:55:13.324203"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "how"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "how"], ["created_at", "2016-02-11 13:55:13.327754"], ["updated_at", "2016-02-11 13:55:13.327754"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ?  ORDER BY "tags"."id" ASC LIMIT 1[0m  [["name", "many"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "many"], ["created_at", "2016-02-11 13:55:13.331418"], ["updated_at", "2016-02-11 13:55:13.331418"]]
+  [1m[35m (1.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "jobs" ("title", "description", "requirements", "job_level", "status", "contact", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["title", "models testing"], ["description", "flgndl"], ["requirements", "ldkngljfn"], ["job_level", "askldgf"], ["status", "fjng"], ["contact", "522"], ["created_at", "2016-02-11 13:55:13.341967"], ["updated_at", "2016-02-11 13:55:13.341967"]]
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "taggings" ("tag_id", "job_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 10], ["job_id", 1004069128], ["created_at", "2016-02-11 13:55:13.344259"], ["updated_at", "2016-02-11 13:55:13.344259"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "taggings" ("tag_id", "job_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["tag_id", 11], ["job_id", 1004069128], ["created_at", "2016-02-11 13:55:13.345905"], ["updated_at", "2016-02-11 13:55:13.345905"]]
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "taggings" ("tag_id", "job_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 12], ["job_id", 1004069128], ["created_at", "2016-02-11 13:55:13.347145"], ["updated_at", "2016-02-11 13:55:13.347145"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "taggings" ("tag_id", "job_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["tag_id", 13], ["job_id", 1004069128], ["created_at", "2016-02-11 13:55:13.348296"], ["updated_at", "2016-02-11 13:55:13.348296"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/jobs
+Completed 302 Found in 36ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:55:13 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.3ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 0.4ms)
+  [1m[35mJob Load (0.7ms)[0m  SELECT  "jobs".* FROM "jobs"  ORDER BY "jobs"."id" DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069128]]
+  [1m[35mJob Load (0.2ms)[0m  SELECT  "jobs".* FROM "jobs"  ORDER BY "jobs"."id" ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 809586041]]
+
+
+Started GET "/jobs/1004069122" for ::1 at 2016-02-11 15:55:53 +0200
+Processing by JobsController#show as HTML
+  Parameters: {"id"=>"1004069122"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.1ms)[0m  [1mSELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1[0m  [["id", 1004069122]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "jobs".* FROM "jobs" WHERE "jobs"."id" = ? LIMIT 1  [["id", "1004069122"]]
+  [1m[36mTag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?[0m  [["job_id", 1004069122]]
+  Rendered jobs/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 69ms (Views: 63.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-11 15:55:57 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36mJob Load (0.2ms)[0m  [1mSELECT "jobs".* FROM "jobs"[0m
+  Rendered jobs/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.3ms)
+  [1m[35mJob Load (0.5ms)[0m  SELECT "jobs".* FROM "jobs"
+
+
+Started GET "/jobs" for ::1 at 2016-02-12 08:25:32 +0200
+Processing by JobsController#index as HTML
+  [1m[35mUser Load (3.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 206669144]]
+  [1m[36m (2.7ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Completed 401 Unauthorized in 58ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/jobs" for ::1 at 2016-02-12 08:25:32 +0200
+Processing by JobsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2016-02-12 08:25:32 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (11.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 129ms (Views: 122.9ms | ActiveRecord: 0.0ms)
+  [1m[36mJob Load (0.5ms)[0m  [1mSELECT  "jobs".* FROM "jobs"  ORDER BY "jobs"."id" ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."job_id" = ?  [["job_id", 809586041]]

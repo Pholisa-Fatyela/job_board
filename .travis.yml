@@ -1,12 +1,12 @@
+language: ruby
 rvm:
-1.9.3
-
+  - 1.9.3
 env:
-– DB=sqlite
-– DB=postgresql
-
-before_script:
-– psql -c ‘create database job_board_test;’ -U postgres
-
+  - DB=sqlite
+  - DB=mysql
+  - DB=postgresql
 script:
-– RAILS_ENV=test bundle exec rake –trace db:migrate spec
+  - RAILS_ENV=test bundle exec rake --trace db:migrate test
+before_script:
+  - mysql -e 'create database job_board_test'
+  - psql -c 'create database job_board_test' -U postgres

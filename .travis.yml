@@ -1,12 +1,8 @@
 language: ruby
 rvm:
-  - 1.9.3
-env:
-  - DB=sqlite
-  - DB=mysql
-  - DB=postgresql
-script:
-  - RAILS_ENV=test bundle exec rake --trace db:migrate test
-before_script:
-  - mysql -e 'create database job_board_test'
-  - psql -c 'create database job_board_test' -U postgres
+ - "1.8.7"
+ - "1.9.2"
+ - "1.9.3"
+ - rbx
+# uncomment this line if your project needs to run something other than `rake`:
+script: bundle exec rspec spec

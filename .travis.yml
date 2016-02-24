@@ -6,3 +6,7 @@ script:
   - bundle exec rake
 
 bundler_args: --binstubs=./bundler_stubs
+
+addons:
+  code_climate:
+    repo_token: 3843dbfd53ff1e2db0fd36bebea968f08f94ec24

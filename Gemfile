@@ -45,6 +45,7 @@ group :development, :test do
   # gem 'byebug'
   gem 'pry-rails'
 	gem 'minitest'
+	gem 'rake'
 end
 
 # guard testing

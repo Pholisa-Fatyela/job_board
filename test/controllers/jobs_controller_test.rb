@@ -16,7 +16,6 @@ class JobsControllerTest < ActionController::TestCase
 
   test "should get new job" do
     get :new
-    binding.pry
     assert_response :success
     assert_select 'form'
   end
